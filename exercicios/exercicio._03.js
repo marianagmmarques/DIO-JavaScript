@@ -35,4 +35,3 @@ function formaDePagamento(pagamento) {
     let pagamento = 4;
     console.log(formaDePagamento(pagamento));
 })();
-
