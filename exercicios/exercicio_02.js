@@ -13,22 +13,30 @@ IMC em adultos Condição:
 - Entre 30 e 40 Obeso;
 - Acima de 40 Obsesidade Grave;
 */
-
-let peso = 70;
-let altura = 1.64;
-
-const calculoImc = peso / Math.pow(altura,2);
-
-console.log('Seu IMC deu '+calculoImc.toFixed(2));
-
-if (calculoImc < 18.5) {
-    console.log('Abaixo do peso');
-} else if (calculoImc >= 18.5 && calculoImc < 25) {
-    console.log('Peso normal');
-} else if (calculoImc >= 25 && calculoImc < 30) {
-    console.log('Acima do peso');
-} else if (calculoImc >= 30 && calculoImc < 40) {
-    console.log('Obeso Grau I');
-} else {
-    console.log('Obsesidade Grave');
+function calcularImc(peso, altura) {
+    return peso / Math.pow(altura,2);
 }
+
+function classificarImc (imc){
+    if (imc < 18.5) {
+    return 'Abaixo do peso';
+    } else if (imc >= 18.5 && imc < 25) {
+        return 'Peso normal';
+    } else if (imc >= 25 && imc < 30) {
+        return 'Acima do peso';
+    } else if (imc >= 30 && imc < 40) {
+        return 'Obeso Grau I';
+    } else {
+        return 'Obsesidade Grave';
+    }
+}
+
+// Main em função anônima
+(function () {
+    let peso = 70;
+    let altura = 1.64;
+
+    const imc = calcularImc(peso, altura);
+    console.log('Seu IMC deu '+imc.toFixed(2));
+    console.log(classificarImc(imc));
+})();
